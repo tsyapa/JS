@@ -1,0 +1,65 @@
+.sticker{
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    bottom: -100px;
+    left: 10px;
+    background-color: darkviolet;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: all 150ms linear;
+}
+
+.sticker:hover{
+    transform: translateY(-100px);
+}
+
+.buy{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+@media print{
+    .sticker{
+        background: white;
+        color: black;
+        border: 3px solid black;
+    }
+    .buy{
+        display: none;
+    }
+}
+
+button{
+    position: relative;
+}
+
+button::before{
+    content: "tooltip";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 20px;
+    display: block;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 3px;
+    transform:scale(0);
+    transition: all 300ms linear;
+    transform-origin: 50% 100%;
+}
+
+button:hover::before{
+    transform:scale(1);
+}
